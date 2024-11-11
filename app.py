@@ -118,6 +118,7 @@ output_format = [
     'wav',
     'flac',
     'mp3',
+    'ogg',
 ]
 
 mdxnet_overlap_values = [

@@ -144,7 +144,7 @@ files_list = []
 found_files = []
 logs = []
 directory = "outputs"
-extensions = (".mp3", ".wav", ".flac")
+extensions = (".mp3", ".wav", ".flac", ".ogg")
 
 os.makedirs("outputs", exist_ok=True)
 os.makedirs("inputs", exist_ok=True)

@@ -13,6 +13,7 @@ __pycache__/
 *.wav
 *.flac
 *.mp3
+*.ogg
 
 # Specific files
 models/*.json

@@ -190,6 +190,9 @@ def roformer_separator(roformer_audio, roformer_model, roformer_output_format, r
   write(f'inputs/{pattern}.wav', roformer_audio[0], roformer_audio[1])
   full_roformer_model = roformer_models[roformer_model]
   prompt = f"{separator_location} ./inputs/{pattern}.wav --model_filename {full_roformer_model} --output_dir=./outputs --output_format={roformer_output_format} --normalization=0.9 --mdxc_overlap={roformer_overlap} --mdxc_segment_size={roformer_segment_size} --model_file_dir=./models"
+  if roformer_output_format == "ogg":
+    prompt += " --output_bitrate=320k"
+
 
   os.system(prompt)
 
@@ -308,6 +311,8 @@ def roformer_batch(path_input, path_output, model, output_format, overlap, segme
     for audio_files in found_files:
       file_path = os.path.join(path_input, audio_files)
       prompt = [separator_location, file_path, "-m", f"{full_roformer_model}", f"--output_dir={path_output}", f"--output_format={output_format}", "--normalization=0.9", f"--mdxc_overlap={overlap}", f"--mdxc_segment_size={segment_size}", "--model_file_dir=./models"]
+      if output_format == "ogg":
+        prompt.append("--output_bitrate=320k")
       logs.append(f"Processing file: {audio_files}")
       yield "\n".join(logs)
       subprocess.run(prompt)

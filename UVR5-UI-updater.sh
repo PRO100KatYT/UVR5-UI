@@ -4,7 +4,7 @@ set -e
 
 echo -e "\e]2;UVR5 UI Updater\a"
 
-REPO_URL="https://github.com/Eddycrack864/UVR5-UI"
+REPO_URL="https://github.com/PRO100KatYT/UVR5-UI"
 
 if [ ! -d ".git" ]; then
     git init

@@ -235,6 +235,7 @@ def roformer_separator(audio, model_key, out_format, segment_size, override_seg_
             use_autocast=use_autocast,
             normalization_threshold=norm_thresh,
             amplification_threshold=amp_thresh,
+            output_bitrate="320k",
             mdxc_params={
                 "segment_size": segment_size,
                 "override_model_segment_size": override_seg_size,
@@ -265,6 +266,7 @@ def mdxc_separator(audio, model, out_format, segment_size, override_seg_size, ov
             use_autocast=use_autocast,
             normalization_threshold=norm_thresh,
             amplification_threshold=amp_thresh,
+            output_bitrate="320k",
             mdxc_params={
                 "segment_size": segment_size,
                 "override_model_segment_size": override_seg_size,
@@ -295,6 +297,7 @@ def mdxnet_separator(audio, model, out_format, hop_length, segment_size, denoise
             use_autocast=use_autocast,
             normalization_threshold=norm_thresh,
             amplification_threshold=amp_thresh,
+            output_bitrate="320k",
             mdx_params={
                 "hop_length": hop_length,
                 "segment_size": segment_size,
@@ -326,6 +329,7 @@ def vrarch_separator(audio, model, out_format, window_size, aggression, tta, pos
             use_autocast=use_autocast,
             normalization_threshold=norm_thresh,
             amplification_threshold=amp_thresh,
+            output_bitrate="320k",
             vr_params={
                 "batch_size": batch_size,
                 "window_size": window_size,
@@ -359,6 +363,7 @@ def demucs_separator(audio, model, out_format, shifts, segment_size, segments_en
             use_autocast=use_autocast,
             normalization_threshold=norm_thresh,
             amplification_threshold=amp_thresh,
+            output_bitrate="320k",
             demucs_params={
                 "batch_size": batch_size,
                 "segment_size": segment_size,
@@ -418,6 +423,7 @@ def roformer_batch(path_input, path_output, model_key, out_format, segment_size,
                     use_autocast=use_autocast,
                     normalization_threshold=norm_thresh,
                     amplification_threshold=amp_thresh,
+                    output_bitrate="320k",
                     mdxc_params={
                         "segment_size": segment_size,
                         "override_model_segment_size": override_seg_size,
@@ -466,6 +472,7 @@ def mdx23c_batch(path_input, path_output, model, out_format, segment_size, overr
                     use_autocast=use_autocast,
                     normalization_threshold=norm_thresh,
                     amplification_threshold=amp_thresh,
+                    output_bitrate="320k",
                     mdxc_params={
                         "segment_size": segment_size,
                         "override_model_segment_size": override_seg_size,
@@ -514,6 +521,7 @@ def mdxnet_batch(path_input, path_output, model, out_format, hop_length, segment
                     use_autocast=use_autocast,
                     normalization_threshold=norm_thresh,
                     amplification_threshold=amp_thresh,
+                    output_bitrate="320k",
                     mdx_params={
                         "hop_length": hop_length,
                         "segment_size": segment_size,
@@ -563,6 +571,7 @@ def vrarch_batch(path_input, path_output, model, out_format, window_size, aggres
                     use_autocast=use_autocast,
                     normalization_threshold=norm_thresh,
                     amplification_threshold=amp_thresh,
+                    output_bitrate="320k",
                     vr_params={
                         "batch_size": batch_size,
                         "window_size": window_size,
@@ -613,6 +622,7 @@ def demucs_batch(path_input, path_output, model, out_format, shifts, segment_siz
                     use_autocast=use_autocast,
                     normalization_threshold=norm_thresh,
                     amplification_threshold=amp_thresh,
+                    output_bitrate="320k",
                     demucs_params={
                         "batch_size": batch_size,
                         "segment_size": segment_size,
@@ -637,7 +647,7 @@ def demucs_batch(path_input, path_output, model, out_format, shifts, segment_siz
 with gr.Blocks(theme = loadThemes.load_json() or "NoCrypt/miku", title = "🎵 UVR5 UI 🎵") as app:
     with Translate("assets/languages/translation.yaml", placeholder_langs = ["en", "es", "it", "pt", "ms", "id", "ru", "uk", "th", "zh", "ja", "ko", "hi"]) as lang:
         gr.Markdown("<h1> 🎵 UVR5 UI 🎵 </h1>")
-        gr.Markdown(_("If you like UVR5 UI you can star my repo on [GitHub](https://github.com/Eddycrack864/UVR5-UI)"))
+        gr.Markdown(_("If you like UVR5 UI you can star my repo on [GitHub](https://github.com/PRO100KatYT/UVR5-UI)"))
         gr.Markdown(_("Try UVR5 UI on Hugging Face with A100 [here](https://huggingface.co/spaces/TheStinger/UVR5_UI)"))
         with gr.Tabs():
             with gr.TabItem("BS/Mel Roformer"):

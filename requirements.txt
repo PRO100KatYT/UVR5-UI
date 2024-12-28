@@ -1,4 +1,4 @@
-git+https://github.com/PRO100KatYT/python-audio-separator.git@main#egg=audio-separator[gpu]
+audio-separator[gpu]==0.28.3
 scipy
 gradio==5.9.1
 yt_dlp
